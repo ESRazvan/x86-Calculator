@@ -31,7 +31,7 @@ mov ah, 9
 int 21h
 
 ;Verificare daca primul caracter introdus de la tastatura este negativ, daca da, se apeleaza o functie
-pentru a citi inca un caracter si a-l memora in complement fata de 2
+;pentru a citi inca un caracter si a-l memora in complement fata de 2
 mov ah, 1
 int 21h
 cmp al, '-'
@@ -116,8 +116,8 @@ jg suma_pozitiva
 neg al
 
 ;Functia aam imparte numarul din al la 10, in ah se memoreaza numarul zecilor iar in al numarul
-unitatilor. Astfel programul poate calcula numere in intervalul [-18, 18]. Numerele zecilor si al
-unitatilor trebuie retinute in format ASCII pentru afisare.
+;unitatilor. Astfel programul poate calcula numere in intervalul [-18, 18]. Numerele zecilor si al
+;unitatilor trebuie retinute in format ASCII pentru afisare.
 suma_pozitiva:
 aam
 mov [zeci], ah
@@ -168,8 +168,8 @@ int 21h
 jmp bucla_meniu
 
 ;In cazul in care primul caracter introdus de la tastatura este ‘-’, se apeleaza functia urmatoare, care
-citeste inca un caracter de la tastatura, il transforma in binar din ASCII si apoi il reprezinta in
-complement fata de 2 si se intoarce la instructiunea care urmeaza dupa apelul functiei.
+;citeste inca un caracter de la tastatura, il transforma in binar din ASCII si apoi il reprezinta in
+;complement fata de 2 si se intoarce la instructiunea care urmeaza dupa apelul functiei.
 citire_nr_negativ:
 mov ah, 1
 int 21h
